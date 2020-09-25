@@ -3,10 +3,9 @@
     <head>
         <title>Hank Quinlan, Horrible Cop</title>
         <script>
-        $(document).ready()=onReady()
-        {
-            console.trace("ready");
-        }
+        $(document).ready(function (){
+             console.trace("ready");
+        })
         function LoadPage(url,func) //url为任意服务器文件
         {
             var xhr= new XMLHttpRequest();
