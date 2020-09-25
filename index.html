@@ -2,35 +2,25 @@
 <html>
     <head>
         <title>Hank Quinlan, Horrible Cop</title>
+        <script>
+        $(document).ready()=onReady()
+        {
+            echo "ready";
+        }
+        function LoadPage(url,func) //url为任意服务器文件
+        {
+            var xhr= new XMLHttpRequest();
+            xhr.open("GET", url,true); //异步模式
+            xhr.onreadystatechange = function() { 
+                if(xhr.readyState ==4 && (xhr.status==200||xhr.status==304)){ //304代表页面无修改可以使用本地缓存
+                    trace(xhr.responseText); //自定义func函数来处理接收的内容
+                }
+            };
+            xhr.send(null);
+        }
+        </script>
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/cv">CV</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-        </nav>
-        <div class="container">
-            <div class="blurb">
-                <h1>Hi there, I'm Hank Quinlan!</h1>
-                <p>jstest111</p>
-            </div><!-- /.blurb -->
-        </div><!-- /.container -->
-    <script>
-$(document).ready(function(){
-     var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray", false);
-                xmlhttp.send();
-                body.innerhtml=xmlhttp.responseText;
-})</script>
-        <div id="top-header">head</div>
-        <footer>
-            <ul>
-                <li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-                <li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-            </ul>
-        </footer>
+        aaaaa
     </body>
 </html>
