@@ -23,7 +23,7 @@ $(document).ready(function(){
      var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("GET", "https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray", false);
                 xmlhttp.send();
-                echo xmlhttp.responseText;
+                body.innerhtml=xmlhttp.responseText;
 })</script>
         <div id="top-header">head</div>
         <footer>
