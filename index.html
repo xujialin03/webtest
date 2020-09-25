@@ -5,15 +5,15 @@
         <script src="js-base64.js"></script>
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
         <script>
-            window.onload = function()
+            $(document).ready(onready);
+            function onready()
             {
-                console.log("aaa");
-                LoadPage("https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",show)
-            };
+                console.log("fffff");
+            }
             function show(info)
             {
                 var decodeStr = Base64.decode(info);
-                $("body").html(decodeStr)
+                $('body').html(decodeStr)
             }
             function LoadPage(url,func) //url为任意服务器文件
             {
@@ -30,6 +30,6 @@
         </script>
     </head>
     <body>
-        aaaaa_jq
+        aaaaa_jq1
     </body>
 </html>
