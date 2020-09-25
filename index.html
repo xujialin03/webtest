@@ -3,10 +3,28 @@
     <head>
         <title>Hank Quinlan, Horrible Cop</title>
         <script>
-        window.onload = function(){
-            alert('Hello World!');
-            console.log("aaa");
-        };
+            window.onload = function()
+            {
+                alert('Hello World!');
+                console.log("aaa");
+                LoadPage("https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray",show)
+            };
+            function show(info)
+            {
+                console.log(inof);
+            }
+            function LoadPage(url,func) //url为任意服务器文件
+            {
+                var xhr= new XMLHttpRequest();
+                xhr.open("GET", url,true); //异步模式
+                xhr.onreadystatechange = function() { 
+                    if(xhr.readyState ==4 && (xhr.status==200||xhr.status==304))
+                    { //304代表页面无修改可以使用本地缓存
+                        func(xhr.responseText); //自定义func函数来处理接收的内
+                    }
+                };
+                xhr.send(null);
+            }
         </script>
     </head>
     <body>
